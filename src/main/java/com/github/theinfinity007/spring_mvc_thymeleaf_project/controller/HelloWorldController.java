@@ -8,9 +8,13 @@ public class HelloWorldController {
 
     // controller method to show initial HTML form
     @RequestMapping("/showForm")
-    public String showForm(){
+    public String showForm() {
         return "helloworld-form";
     }
 
     // Controller method to process the HTML form
+    @RequestMapping("/processForm")
+    public String processForm() {
+        return "helloworld-process-form";
+    }
 }
