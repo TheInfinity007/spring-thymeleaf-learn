@@ -8,9 +8,19 @@
 <h3>Student Registration Form</h3>
 <form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
     <!--  *{firstName} is same as student.firstName   -->
-    <input type="text" name="firstName" th:field="*{firstName}" placeholder="First Name"/>
+    First name: <input type="text" name="firstName" th:field="${student.firstName}" placeholder="First Namee"/>
     <br><br>
-    <input type="text" name="lastName" th:field="*{lastName}" placeholder="Last Name"/>
+    Last name: <input type="text" name="lastName" th:field="*{lastName}" placeholder="Last Name"/>
+    <br><br>
+
+    Country:
+    <select th:field="*{country}">
+        <option th:value="Brazil">Brazil</option>
+        <option th:value="France">France</option>
+        <option th:value="Germany">Germany</option>
+        <option th:value="India">India</option>
+    </select>
+
     <br><br>
     <input type="submit"/>
 </form>
