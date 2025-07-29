@@ -2,3 +2,4 @@ spring:
   application:
     name: spring-mvc-thymeleaf-project
 
+countries: Brazil,France,Germany,India,Mexico,Spain,Portugal
