@@ -5,7 +5,16 @@
     <title>Hello World - Input Form</title>
 </head>
 <body>
+    <h3>Form1</h3>
     <form th:action="@{/processForm}" method="GET">
+        <input type="text" name="studentName" placeholder="What's your name"/>
+
+        <input type="submit"/>
+    </form>
+
+    <br><br>
+    <h3>Form2</h3>
+    <form th:action="@{/processFormVersionTwo}" method="GET">
         <input type="text" name="studentName" placeholder="What's your name"/>
 
         <input type="submit"/>
