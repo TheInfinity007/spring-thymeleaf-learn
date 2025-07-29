@@ -3,6 +3,8 @@ package com.github.theinfinity007.spring_mvc_thymeleaf_project.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -10,13 +12,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HelloWorldController {
 
     // controller method to show initial HTML form
-    @RequestMapping("/showForm")
+    @GetMapping("/showForm")
+//    @RequestMapping("/showForm")    // This mapping handles all HTTP methods
     public String showForm() {
         return "helloworld-form";
     }
 
     // Controller method to process the HTML form
-    @RequestMapping("/processForm")
+    @RequestMapping("/processForm")     // This mapping handles all HTTP methods
     public String processForm() {
         return "helloworld-process-form";
     }
@@ -41,7 +44,9 @@ public class HelloWorldController {
         return "helloworld-process-form";
     }
 
-    @RequestMapping("/processFormVersionThree")
+
+//    @RequestMapping("/processFormVersionThree")
+    @PostMapping("/processFormVersionThree")
     public String processFormVersionThree(@RequestParam("studentName") String sName, Model model){
 
 
