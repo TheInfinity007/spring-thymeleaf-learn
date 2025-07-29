@@ -4,6 +4,7 @@ import com.github.theinfinity007.spring_mvc_thymeleaf_project.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -19,6 +20,13 @@ public class StudentController {
         return "student-form";
     }
 
-//    @PostMapping("/")
+    @PostMapping("/processStudentForm")
+    public String processStudentForm(@ModelAttribute("student") Student theStudent){
+
+        System.out.println("theStudent.getFirstName() = " + theStudent.getFirstName());
+        System.out.println("theStudent.getLastName() = " + theStudent.getLastName());
+        
+        return "student-confirmation";
+    }
 
 }
