@@ -1,5 +1,7 @@
 package com.github.theinfinity007.spring_mvc_thymeleaf_project.model;
 
+import java.util.List;
+
 public class Student {
     private String firstName;
 
@@ -8,6 +10,8 @@ public class Student {
     private String country;
 
     private String favouriteLanguage;
+
+    private List<String> favouriteOS;
 
     public Student(){}
 
@@ -41,5 +45,13 @@ public class Student {
 
     public void setFavouriteLanguage(String favouriteLanguage) {
         this.favouriteLanguage = favouriteLanguage;
+    }
+
+    public List<String> getFavouriteOS() {
+        return favouriteOS;
+    }
+
+    public void setFavouriteOS(List<String> favouriteOS) {
+        this.favouriteOS = favouriteOS;
     }
 }
