@@ -1,5 +1,6 @@
 package com.github.theinfinity007.spring_mvc_thymeleaf_project.model;
 
+import com.github.theinfinity007.spring_mvc_thymeleaf_project.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
@@ -16,6 +17,9 @@ public class Customer {
 
     @Pattern(regexp= "^[a-zA-Z0-9]{5}", message="only 5 chars/digits allowed")
     private String postalCode;
+
+    @CourseCode(value="INF", message="must start with INF")
+    private String courseCode;
 
     public String getFirstName() {
         return firstName;
@@ -47,5 +51,13 @@ public class Customer {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }
